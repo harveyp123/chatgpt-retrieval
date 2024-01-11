@@ -35,7 +35,7 @@ else:
     index = VectorstoreIndexCreator().from_loaders([loader])
 
 chain = ConversationalRetrievalChain.from_llm(
-  llm=ChatOpenAI(model="gpt-3.5-turbo"),
+  llm=ChatOpenAI(model="gpt-3.5-turbo"), #"gpt-3.5-turbo" "gpt-4-0613" "gpt-4-0314" "gpt-4" "gpt-4-1106-preview"
   retriever=index.vectorstore.as_retriever(search_kwargs={"k": 1}),
 )
 
